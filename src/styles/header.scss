@@ -1,0 +1,47 @@
+header {
+  @extend .flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $secondary-bg-color;
+  padding: 1em 0.8em;
+  font-size: min(3.5vmin, 1rem);
+
+  .pageTitle {
+    color: $primary-color;
+  }
+}
+
+// Menu Bar Styling
+.menu-bar {
+  position: absolute;
+  inset: 100% 1% auto auto;
+  margin-top: 5px;
+  z-index: 10;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 0.7em;
+  background-color: $secondary-bg-color;
+  box-shadow: $box-shadow-v1;
+
+  ul {
+    flex-direction: column;
+    font-size: min(4vmin, 1.1rem);
+    color: $primary-color;
+
+    li {
+      width: 100%;
+      a {
+        width: 100%;
+        justify-content: space-between;
+        gap: min(10vmin, 50px);
+        padding: 0.8em 0;
+        border-bottom: 1px solid $secondary-color;
+      }
+      &:last-child a {
+        border-bottom: none;
+        color: $attention-color;
+      }
+    }
+  }
+}

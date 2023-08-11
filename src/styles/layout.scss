@@ -1,0 +1,7 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: $page-color;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}

@@ -1,0 +1,223 @@
+main {
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba($secondary-color, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($secondary-color, 0.8);
+  }
+}
+
+// ---Crypto Card
+.crypto-card {
+  padding: 1.4em;
+
+  .top-row {
+    justify-content: start;
+    gap: 20px;
+
+    .nameBox {
+      font-size: min(3vmin, 1.1rem);
+      color: $primary-color;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .cryptoIcon {
+      padding: 0.5em;
+      background-image: linear-gradient(
+        90deg,
+        $accent-color-v1-dim 0%,
+        $accent-color-v1-light 100%
+      );
+      border-radius: 50%;
+      color: $secondary-bg-color;
+      font-size: min(4.3vmin, 1.6rem);
+    }
+
+    .cryptoNameShort {
+      color: $secondary-color;
+    }
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+    margin: 1.5em 0 1em;
+
+    .cryptoPrice {
+      font-size: min(5.3vmin, 1.7rem);
+      color: $primary-color;
+    }
+
+    .currencyPrice {
+      width: 100%;
+      justify-content: space-between;
+      font-size: min(3.5vmin, 1.1rem);
+      color: $secondary-color;
+
+      .discount {
+        color: $secondary-bg-color;
+        background-color: $attention-color;
+        border-radius: 0.8em;
+        padding: 0.3em 0.7em;
+        font-size: 0.85em;
+      }
+    }
+  }
+
+  .show-more {
+    color: $secondary-color;
+    font-size: min(5.3vmin, 1.3rem);
+    flex-direction: column;
+
+    .show-more-icon {
+      width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .buy-sell-btns {
+      justify-content: space-between;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease-in-out, margin 0.5s ease;
+      width: min(300px, 100%);
+      gap: min(3vw, 50px);
+
+      &.show {
+        max-height: 50px;
+        margin: 10px 0;
+      }
+
+      button {
+        padding: 0.8em;
+        color: $secondary-bg-color;
+        background-image: linear-gradient(
+          0deg,
+          rgb(29, 114, 241) 0%,
+          rgb(23, 200, 252) 100%
+        );
+
+        &:last-child {
+          background-image: linear-gradient(
+            0deg,
+            rgb(251, 35, 162) 0%,
+            rgb(255, 103, 124) 100%
+          );
+        }
+      }
+    }
+  }
+}
+
+// ---Sort List
+.sort-list {
+  justify-content: space-between;
+  margin: 0 auto;
+  width: min(600px, 85%);
+  font-size: min(3.3vmin, 1rem);
+
+  li {
+    padding: 0.3em 0.8em;
+    color: $secondary-color;
+    border-radius: 0.8em;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      background-color: $secondary-color;
+      color: $secondary-bg-color;
+    }
+  }
+}
+
+// ---Crypto Chart
+.crypto-chart {
+  position: relative;
+  width: 100%;
+  border-radius: 0;
+
+  .chart-infos {
+    font-size: min(3.1vmin, 1rem);
+    width: min(400px, 80%);
+    color: $secondary-color;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2em 0.5em 0em;
+
+    p {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        inset: 50% 100% auto auto;
+        transform: translate(-50%, -50%);
+        background-color: $accent-color-v2;
+      }
+    }
+
+    p:last-child::before {
+      background-color: $accent-color-v3;
+    }
+  }
+
+  .chart-container {
+    width: 100%;
+    height: min(300px, 75vw);
+  }
+
+  .exchange-rate {
+    font-size: min(3.1vmin, 1rem);
+    position: absolute;
+    inset: auto auto 0 5%;
+    margin: 0 0 1.5em 2em;
+    color: $primary-color;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $accent-color-v1-light;
+      inset: 50% 100% auto auto;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// ---Purchase
+.purchase-box {
+  width: min(700px, 90%);
+  margin: 30px auto;
+  gap: min(5vw, 40px);
+  justify-content: space-between;
+
+  button {
+    flex-direction: column;
+    gap: 15px;
+
+    .purchase-icon {
+      border-radius: 50%;
+      font-size: min(4.3vmin, 1.4rem);
+      color: $secondary-bg-color;
+      padding: 0.5em;
+      background-image: $gradient-v1;
+    }
+  }
+  button:last-child .purchase-icon {
+    background-image: $gradient-v2;
+  }
+}
